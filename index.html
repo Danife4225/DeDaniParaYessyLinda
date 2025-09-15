@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página para la tauadora más bonita 💖</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Meteoros + corazones -->
+  <div class="meteor"></div>
+  <div class="meteor"></div>
+  <div class="meteor"></div>
+  <div class="meteor"></div>
+  <div class="meteor"></div>
+
+  <div class="hearts">
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+  </div>
+  <!--confetti-->
+  <div class="confetti">
+  <div class="confetti-heart" style="left: 10%; animation-duration: 4s; animation-delay: 0s;"></div>
+  <div class="confetti-heart" style="left: 25%; animation-duration: 5s; animation-delay: 1s;"></div>
+  <div class="confetti-heart" style="left: 40%; animation-duration: 6s; animation-delay: 2s;"></div>
+  <div class="confetti-heart" style="left: 55%; animation-duration: 4.5s; animation-delay: 1.5s;"></div>
+  <div class="confetti-heart" style="left: 70%; animation-duration: 5.5s; animation-delay: 2.5s;"></div>
+  <div class="confetti-heart" style="left: 85%; animation-duration: 6.5s; animation-delay: 3s;"></div>
+</div>
+<!--petalos-->
+<div class="petals">
+  <div class="petal" style="left: 5%; animation-duration: 6s; animation-delay: 0s;"></div>
+  <div class="petal" style="left: 20%; animation-duration: 7s; animation-delay: 1s;"></div>
+  <div class="petal" style="left: 35%; animation-duration: 6.5s; animation-delay: 2s;"></div>
+  <div class="petal" style="left: 50%; animation-duration: 7.2s; animation-delay: 0.5s;"></div>
+  <div class="petal" style="left: 65%; animation-duration: 6.8s; animation-delay: 1.2s;"></div>
+  <div class="petal" style="left: 80%; animation-duration: 7.5s; animation-delay: 2.3s;"></div>
+</div>
+
+
+
+  <!-- Contenedores principales -->
+  <div class="container">
+    <div class="box box1">
+      <h1>Hola mi Yessy, esta página es para ti, con mucho cariño Daniel 💕</h1>
+    </div>
+    <div class="box box2">
+      <p>
+        Eres una persona muy especial y quería mostrártelo de una manera diferente. Me encanta cada faceta de ti, tu autenticidad y la forma en que haces que todo a tu alrededor se sienta más cálido y positivo. Realmente quiero seguir conociéndote, descubrir cada pequeño detalle que te hace única y compartir momentos contigo. Me interesas mucho y cada día me doy cuenta de lo increíble que eres.✨
+      </p>
+    </div>
+    <div class="box box3">
+      <img id="FloresYessy" src="Imagenes/ImagenYessy.png" alt="Flores">
+      <div class="video-container">
+    <button id="playBtn">Dale aquí 💖</button>
+    <video id="VideoYessy" autoplay loop muted playsinline>
+      <source src="Imagenes/VideoYessy.mp4" type="video/mp4">
+    </video>
+  </div>
+
+
+      <img id="Yessy" src="Imagenes/Yessy.png" alt="Yessy">
+  
+    </div>
+<audio id="musicaFondo" loop>
+  <source src="Imagenes/AudioYessy.mp3" type="audio/mp3">
+</audio>
+
+
+<script>
+  const audio = document.getElementById("musicaFondo");
+  const btn = document.getElementById("playBtn");
+
+  btn.addEventListener("click", () => {
+    audio.play();
+    btn.style.display = "none"; // ocultar botón después de hacer clic
+  });
+</script>
+<!-- Contenedor de los mensajes -->
+<div id="mensajeToque"></div>
+
+<script>
+  const mensajes = [
+    "Hermosa",
+    "Preciosa",
+    "Divina",
+    "Genial",
+    "Grandiosa",
+    "Fabulosa",
+    "Única",
+    "Inigualable",
+    "Dani te manda un besote 💋"
+  ];
+
+  let indice = 0;
+
+  document.addEventListener("click", () => {
+    const mensajeDiv = document.getElementById("mensajeToque");
+
+    mensajeDiv.innerText = mensajes[indice];
+    mensajeDiv.classList.add("mostrar");
+
+    setTimeout(() => {
+      mensajeDiv.classList.remove("mostrar");
+    }, 1000);
+
+    indice++;
+    if (indice >= mensajes.length) {
+      indice = 0;
+    }
+  });
+</script>
+<script>
+  document.addEventListener("click", (e) => {
+    const lirio = document.createElement("div");
+    lirio.classList.add("lirio");
+    lirio.textContent = "🌸"; // aquí puedes cambiar por 💮 si prefieres
+
+    // Ubicación donde tocó/clicó
+    lirio.style.left = e.pageX + "px";
+    lirio.style.top = e.pageY + "px";
+
+    document.body.appendChild(lirio);
+
+    // Eliminar después de la animación
+    setTimeout(() => {
+      lirio.remove();
+    }, 1000);
+  });
+</script>
+
+
+
+
+  </div>
+</body>
+</html>
